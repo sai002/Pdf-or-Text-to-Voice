@@ -1,1 +1,7 @@
 .env
+*.mp3
+*.wav
+*.m4a
+static1/*
+!static1/Style.css
+
