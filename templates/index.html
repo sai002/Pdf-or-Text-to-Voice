@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PDF to Voice Converter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="/static1/Style.css">
+</head>
+<body class="bg-light">
+
+<div class="container py-5">
+    <div class="text-center mb-4">
+        <h1 class="display-5 fw-bold">🗣️ PDF to Voice Converter</h1>
+        <p class="lead">Upload a PDF or enter custom text to generate speech using ElevenLabs</p>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form action="/convert" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="pdf" class="form-label">Upload PDF</label>
+                    <input type="file" class="form-control" name="pdf" accept=".pdf">
+                </div>
+
+                <div class="mb-3">
+                    <label for="text" class="form-label">Or Enter Text</label>
+                    <textarea class="form-control" name="text" rows="5" placeholder="Type your text here..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">🎧 Convert to Audio</button>
+            </form>
+            <!-- Loader section after the form -->
+<div id="loading" class="text-center mt-4" style="display: none;">
+    <div class="wave-loader">
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <p class="mt-2 text-muted">Generating audio, please wait...</p>
+</div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.querySelector('form').addEventListener('submit', function() {
+        document.getElementById('loading').style.display = 'block';
+    });
+</script>
+
+</body>
+</html>
